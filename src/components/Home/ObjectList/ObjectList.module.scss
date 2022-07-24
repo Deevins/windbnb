@@ -1,0 +1,11 @@
+.root {
+  display: grid;
+  // rows / columns
+  grid-template: repeat(3, 400px) / repeat(3, 395px);
+  grid-column-gap: 90px;
+  grid-row-gap: 49px;
+  justify-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+}

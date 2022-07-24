@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  span {
+    margin-right: 99px;
+  }
+}
