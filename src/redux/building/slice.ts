@@ -28,7 +28,6 @@ export const slice = createSlice({
       (state, action: PayloadAction<BuildingType[]>) => {
         console.log('Request completed...')
         state.items = action.payload
-        console.log(action.payload)
         state.status = FetchStatusEnum.SUCCESS
       }
     )

@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { BiSearchAlt2 } from 'react-icons/bi'
 
 import styles from './Search.module.scss'
 
-import { BiSearchAlt2 } from 'react-icons/bi'
+type Props = {
+  isOpen: boolean
+  changeSearchBar: () => void
+}
 
-const Search: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>()
-  console.log(isOpen)
-
+const Search: React.FC<Props> = ({ isOpen, changeSearchBar }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.locationBlock} onClick={() => setIsOpen(!isOpen)}>
+      <div className={styles.locationBlock} onClick={changeSearchBar}>
         <span className={styles.locationInnerBlock}>Anywhere</span>
       </div>
       <div className={styles.guestsBlock}>
