@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import building from './object/slice'
-import { useDispatch } from 'react-redux'
+import building from './building/slice'
+import search from './search/slice'
 
 export const store = configureStore({
   reducer: {
-    building
+    building,
+    search
   }
 })
 

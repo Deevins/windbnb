@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import styles from './ObjectList.module.scss'
 import { FetchStatusEnum } from '../../../@types/enums/FetchStatusEnum'
 
-import { selectBuildings } from 'redux/object/selectors'
-import { fetchBuildings } from 'redux/object/asyncActions'
+import { selectBuildings } from 'redux/building/selectors'
+import { fetchBuildings } from 'redux/building/asyncActions'
 import { AppDispatch } from 'redux/store'
 
 import ObjectBlock from '../ObjectBlock'

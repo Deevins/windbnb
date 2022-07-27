@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
 import styles from './Search.module.scss'
 
-type Props = {
-  isOpen: boolean
-  changeSearchBar: () => void
-}
+import { selectSearch } from 'redux/search/selectors'
+import { SearchContext } from '../../../App'
+const Search: React.FC = () => {
+  const { locationProperty, guestsProperty } = useSelector(selectSearch)
+  // @ts-ignore
+  const { isOpen, setIsOpen } = useContext(SearchContext)
 
-const Search: React.FC<Props> = ({ isOpen, changeSearchBar }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.locationBlock} onClick={changeSearchBar}>
-        <span className={styles.locationInnerBlock}>Anywhere</span>
+      <div className={styles.locationBlock}>
+        <span className={styles.locationInnerBlock}>
+          {locationProperty ? locationProperty : 'Anywhere'}
+        </span>
       </div>
       <div className={styles.guestsBlock}>
-        <span className={styles.guestsInnerBlock}>Add guests</span>
+        <span className={styles.guestsInnerBlock}>
+          {guestsProperty.adultCount + guestsProperty.childrenCount > 0
+            ? `${
+                guestsProperty.adultCount + guestsProperty.childrenCount
+              } people`
+            : 'Add guests'}
+        </span>
       </div>
       <div className={styles.searchBlock}>
         <BiSearchAlt2 className={styles.searchIcon} />
