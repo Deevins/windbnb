@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from 'components/Common/Header/Header'
-import Popup from '../components/Common/Popup'
 
 type Props = {
   children: React.ReactNode

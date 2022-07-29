@@ -1,9 +1,10 @@
+import { SearchPropertyEnum } from '../../@types/enums/SearchPropertyEnum'
+
 export interface ISearchSliceState {
   locationProperty: string
-  guestsProperty: {
-    adultCount: number
-    childrenCount: number
-  }
+  adultCount: number
+  childrenCount: number
+  currentProperty: SearchPropertyEnum
 }
 
 export type guestsType = {

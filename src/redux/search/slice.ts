@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { guestsType, ISearchSliceState, locationAndGuestsType } from './types'
+import { ISearchSliceState } from './types'
+import { SearchPropertyEnum } from '../../@types/enums/SearchPropertyEnum'
 
 const initialState: ISearchSliceState = {
   locationProperty: 'Helsinki, Finland',
-  guestsProperty: {
-    adultCount: 0,
-    childrenCount: 0
-  }
+  adultCount: 0,
+  childrenCount: 0,
+  currentProperty: SearchPropertyEnum.LOCATION
 }
 
 export const slice = createSlice({
@@ -17,19 +17,12 @@ export const slice = createSlice({
     setLocation: (state, action: PayloadAction<string>) => {
       state.locationProperty = action.payload
     },
-    setGuests: (state, action: PayloadAction<guestsType>) => {
-      state.guestsProperty = action.payload
-    },
-    setLocationAndGuests: (
-      state,
-      action: PayloadAction<locationAndGuestsType>
-    ) => {
-      state.guestsProperty = action.payload.guestsProperty
-      state.locationProperty = action.payload.locationProperty
+    setCurrentProperty: (state, action: PayloadAction<SearchPropertyEnum>) => {
+      state.currentProperty = action.payload
     }
   }
 })
 
-export const { setLocation, setGuests, setLocationAndGuests } = slice.actions
+export const { setLocation, setCurrentProperty } = slice.actions
 
 export default slice.reducer
