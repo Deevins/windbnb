@@ -7,8 +7,8 @@ type SearchContextType = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-// made default Value to optional to avoid error.
-export const SearchContext = createContext<SearchContextType>()
+//@ts-ignore
+export const SearchContext = createContext<SearchContextType>(false)
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
