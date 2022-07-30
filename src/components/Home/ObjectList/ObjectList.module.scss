@@ -6,6 +6,28 @@
   grid-row-gap: 49px;
   justify-items: center;
   justify-content: center;
-
   margin-bottom: 25px;
+
+  @media screen and (max-width: 1400px) {
+    grid-template: repeat(3, 400px) / repeat(2, 400px);
+  }
+  @media screen and (max-width: 900px) {
+    grid-template: repeat(3, 400px) / repeat(1, 400px);
+  }
+
+  .alertTitle {
+    font-size: 35px;
+    position: absolute;
+    top: 18%;
+    font-weight: bold;
+
+    @media screen and (max-width: 490px) {
+      top: 25%;
+      font-size: 29px;
+    }
+    @media screen and (max-width: 490px) {
+      top: 25%;
+      font-size: 25px;
+    }
+  }
 }

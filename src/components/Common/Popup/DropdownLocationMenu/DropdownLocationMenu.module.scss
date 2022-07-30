@@ -1,0 +1,40 @@
+.dropdownLocationMenu {
+  top: 190px;
+  width: 29%;
+  height: 39.5vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow-y: auto;
+
+  @media screen and (max-width: 1510px) {
+    height: 49vh;
+    background: red;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 450;
+    line-height: 18px;
+    color: #4f4f4f;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 25px;
+    &:hover {
+      cursor: pointer;
+      background: #f8f8f8;
+    }
+  }
+  &Icon {
+    left: 50px;
+    font-size: 15px;
+    color: #4f4f4f;
+    margin-right: 3px;
+  }
+  &Hidden {
+    display: none;
+  }
+}

@@ -1,16 +1,22 @@
 import React, { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BiSearchAlt2 } from 'react-icons/bi'
+import clsx from 'clsx'
 
 import styles from './Popup.module.scss'
 
 import { selectSearch } from 'redux/search/selectors'
-import { SearchContext } from 'App'
-import { useOnClickOutside } from 'hooks/useOnClickOutside'
-import clsx from 'clsx'
-import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
 import { AppDispatch } from 'redux/store'
 import { setCurrentProperty } from 'redux/search/slice'
+
+import { useOnClickOutside } from 'hooks/useOnClickOutside'
+import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
+
+import { SearchContext } from 'App'
+import DropdownGuestsMenu from './DropdownGuestsMenu'
+import DropdownLocationMenu from './DropdownLocationMenu'
+import { getFetchParams } from '../../../utils/GetFetchParams'
+import { fetchBuildings } from '../../../redux/building/asyncActions'
 
 const Popup: React.FC = () => {
   const { adultCount, childrenCount, currentProperty, locationProperty } = useSelector(selectSearch)
@@ -20,8 +26,37 @@ const Popup: React.FC = () => {
 
   useOnClickOutside(popUpRef, () => setIsOpen(false))
 
+  const onClickSearch = async () => {
+    setIsOpen(false)
+    const { city, country, peopleCount } = getFetchParams({
+      locationProperty,
+      adultCount,
+      childrenCount
+    })
+    await dispatch(
+      fetchBuildings({
+        city,
+        country,
+        peopleCount
+      })
+    )
+  }
+
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = ''
+      window.scrollTo(0, 0)
+    }
+  }, [])
+
   return (
-    <div className={isOpen ? [styles.active].join(' ') : styles.root}>
+    <div
+      className={clsx({
+        [styles.active]: isOpen,
+        [styles.root]: !isOpen
+      })}
+    >
       <div className={styles.popupInterface} ref={popUpRef}>
         <div className={styles.searchContainer}>
           <div
@@ -31,10 +66,15 @@ const Popup: React.FC = () => {
             onClick={() => dispatch(setCurrentProperty(SearchPropertyEnum.LOCATION))}
           >
             <span className={styles.locationInnerBlockTitle}>Location</span>
-            <span className={styles.locationInnerBlock}>
+            <span
+              className={clsx(styles.locationInnerBlock, {
+                [styles.inactive]: locationProperty === 'Add location'
+              })}
+            >
               {locationProperty ? locationProperty : 'Anywhere'}
             </span>
           </div>
+          <DropdownLocationMenu />
           <div
             className={clsx(styles.guestsBlock, {
               [styles.guestsBlock_active]: currentProperty === SearchPropertyEnum.GUESTS
@@ -42,12 +82,17 @@ const Popup: React.FC = () => {
             onClick={() => dispatch(setCurrentProperty(SearchPropertyEnum.GUESTS))}
           >
             <span className={styles.guestsInnerBlockTitle}>Guests</span>
-            <span className={styles.guestsInnerBlock}>
+            <span
+              className={clsx(styles.guestsInnerBlock, {
+                [styles.inactive]: !adultCount || childrenCount
+              })}
+            >
               {adultCount || childrenCount ? `${adultCount + childrenCount} people` : 'Add guests'}
             </span>
           </div>
+          <DropdownGuestsMenu />
           <div className={styles.searchBlock}>
-            <div className={styles.searchInnerBlock}>
+            <div className={styles.searchInnerBlock} onClick={onClickSearch}>
               <BiSearchAlt2 className={styles.searchIcon} />
               <span>Search</span>
             </div>

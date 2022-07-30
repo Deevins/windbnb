@@ -11,7 +11,7 @@ type SearchContextType = {
 export const SearchContext = createContext<SearchContextType>()
 
 const App: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
     <>

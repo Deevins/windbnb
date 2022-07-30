@@ -3,7 +3,7 @@ import LocationTitle from '../LocationTitle'
 
 import styles from './LocationAndCountBlock.module.scss'
 import { useSelector } from 'react-redux'
-import { selectBuildings } from '../../../redux/building/selectors'
+import { selectBuildings } from 'redux/building/selectors'
 
 const LocationAndCountBlock: React.FC = () => {
   const { items } = useSelector(selectBuildings)

@@ -4,11 +4,7 @@ import MainLayout from 'layouts/MainLayout'
 import LocationAndCountBlock from 'components/Home/LocationAndCountBlock'
 import ObjectList from 'components/Home/ObjectList'
 
-const Home: React.FC = () => {
-  React.useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
+const Home: React.FC = React.memo(() => {
   return (
     <>
       <MainLayout>
@@ -17,6 +13,6 @@ const Home: React.FC = () => {
       </MainLayout>
     </>
   )
-}
+})
 
 export default Home

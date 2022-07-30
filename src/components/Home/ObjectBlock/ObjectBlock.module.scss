@@ -1,15 +1,29 @@
 .main {
-  height: 359px;
   width: 394px;
+  height: 359px;
+
+  @media screen and (max-width: 420px) {
+    width: 80%;
+    height: 10%;
+  }
+  @media screen and (max-width: 420px) {
+    width: 63%;
+    height: 10%;
+  }
 
   .desc {
     display: flex;
-    width: 400px;
+    width: 380px;
     flex-direction: row;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 11px;
     justify-content: space-between;
+
+    @media screen and (max-width: 420px) {
+      width: 98%;
+      justify-content: space-between;
+    }
   }
 
   .superBlock {
@@ -21,6 +35,10 @@
     display: flex;
     flex-direction: row;
     margin-right: 11px;
+    @media screen and (max-width: 450px) {
+      margin-right: 6px;
+      width: 30%;
+    }
 
     .super {
       width: 100%;
@@ -32,12 +50,34 @@
       padding-bottom: 15px;
       margin-left: 3px;
       color: #4f4f4f;
+      @media screen and (max-width: 420px) {
+        font-size: 9.4px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 7.5px;
+      }
     }
   }
 
   .place {
     width: 200px;
     color: #828282;
+
+    @media screen and (max-width: 450px) {
+      width: 190px;
+      font-size: 16px;
+      text-overflow: ellipsis;
+    }
+    @media screen and (max-width: 430px) {
+      width: 42.5% !important;
+      font-size: 14px;
+      text-overflow: ellipsis;
+    }
+  }
+  .rating {
+    @media screen and (max-width: 430px) {
+      font-size: 13px;
+    }
   }
   .placeDesc {
     font-size: 16px;

@@ -6,26 +6,11 @@ import styles from './ObjectBlock.module.scss'
 import { BuildingType } from '../../../@types/BuildingType'
 
 const ObjectBlock: React.FC<BuildingType> = (props) => {
-  const {
-    // city,
-    // country,
-    // id,
-    // maxGuests,
-    photo,
-    rating,
-    superHost,
-    title,
-    type,
-    beds
-  } = props
+  const { photo, rating, superHost, title, type, beds } = props
 
   return (
     <div className={styles.main}>
-      <img
-        src={photo}
-        alt="objectImage"
-        style={{ width: '395px', height: '269px' }}
-      />
+      <img src={photo} alt="objectImage" style={{ width: '395px', height: '269px' }} />
       <div className={styles.desc}>
         {superHost && (
           <div className={styles.superBlock}>
@@ -33,9 +18,9 @@ const ObjectBlock: React.FC<BuildingType> = (props) => {
           </div>
         )}
         <div className={styles.place}>
-          {type}. {beds && beds} beds
+          {type}. {beds ? `${beds} beds` : ''}
         </div>
-        <div>
+        <div className={styles.rating}>
           <BsStarFill fill={'#EB5757'} style={{ marginRight: '7px' }} />
           <span>{rating}</span>
         </div>
