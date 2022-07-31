@@ -7,7 +7,7 @@
     height: 10%;
   }
   @media screen and (max-width: 420px) {
-    width: 63%;
+    width: 75%;
     height: 10%;
   }
 
@@ -21,7 +21,14 @@
     justify-content: space-between;
 
     @media screen and (max-width: 420px) {
-      width: 98%;
+      width: 100%;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 420px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 300px) {
       justify-content: space-between;
     }
   }
@@ -36,8 +43,8 @@
     flex-direction: row;
     margin-right: 11px;
     @media screen and (max-width: 450px) {
-      margin-right: 6px;
-      width: 30%;
+      margin-right: 15px;
+      width: 26%;
     }
 
     .super {
@@ -51,10 +58,11 @@
       margin-left: 3px;
       color: #4f4f4f;
       @media screen and (max-width: 420px) {
-        font-size: 9.4px;
-      }
-      @media screen and (max-width: 420px) {
         font-size: 7.5px;
+        padding-left: 7px;
+      }
+      @media screen and (max-width: 330px) {
+        font-size: 5px;
       }
     }
   }
@@ -73,10 +81,15 @@
       font-size: 14px;
       text-overflow: ellipsis;
     }
+    @media screen and (max-width: 330px) {
+      font-size: 12px;
+      width: 150px;
+    }
   }
   .rating {
     @media screen and (max-width: 430px) {
       font-size: 13px;
+      justify-self: right;
     }
   }
   .placeDesc {

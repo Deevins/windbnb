@@ -4,5 +4,9 @@ export const placeTitles = [
   'Helsinki, Finland',
   'Turku, Finland',
   'Oulu, Finland',
-  'Vaasa, Finland'
+  'Vaasa, Finland',
+  'Turku, Finland',
+  'Oulu, Finland',
+  'Turku, Finland',
+  'Oulu, Finland'
 ]

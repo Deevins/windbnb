@@ -1,15 +1,25 @@
 .dropdownLocationMenu {
   top: 190px;
   width: 29%;
-  height: 39.5vh;
+  height: 28vh;
   display: flex;
   flex-direction: column;
   position: absolute;
   overflow-y: auto;
-
-  @media screen and (max-width: 1510px) {
-    height: 49vh;
-    background: red;
+  @media screen and (max-width: 840px) {
+    height: 23vh;
+  }
+  @media screen and (max-width: 800px) {
+    top: 120px;
+    height: 38vh;
+    right: 12vw;
+    width: 70%;
+  }
+  @media (max-width: 800px) {
+    top: 120px;
+    height: 38vh;
+    right: 12vw;
+    width: 70%;
   }
 
   li {
@@ -26,6 +36,9 @@
     &:hover {
       cursor: pointer;
       background: #f8f8f8;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 13px;
     }
   }
   &Icon {

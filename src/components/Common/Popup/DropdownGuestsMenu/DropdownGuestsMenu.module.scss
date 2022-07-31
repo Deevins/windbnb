@@ -5,6 +5,10 @@
   width: 38.5%;
   height: 14.05vmax;
 
+  @media screen and (max-width: 380px) {
+    top: 140px;
+  }
+
   h4 {
     font-size: 18px;
     font-weight: 550;
