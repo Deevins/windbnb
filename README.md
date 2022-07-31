@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://windbnb-three.vercel.app/">
       Demo
     </a>
     <span> | </span>
@@ -37,14 +37,13 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://github.com/Deevins/windbnb/raw/main/public/preview.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+Project demo can be seen by link above.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+For data fetching I used Redux Toolkit(async actions + axios) and for global state(Practice).
+
+By doing this project I learned how to do adaptive design and React + Typescript usage.
 
 ### Built With
 
@@ -52,14 +51,7 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 - [React](https://reactjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Tailwind](https://tailwindcss.com/)
 - [axios](https://axios-http.com/)
-
-## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD) was to build an application to complete the given user stories.
 
 ## How To Use
 
@@ -77,14 +69,6 @@ $ npm install
 # Run the app
 $ npm start
 ```
-
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 
