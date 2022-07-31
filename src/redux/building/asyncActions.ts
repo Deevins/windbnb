@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { BuildingType } from '../../@types/BuildingType'
-import { DATA_URL } from '../../@types/constants'
 import axios from 'axios'
+
+import { DATA_URL } from '../../@types/constants'
+
+import { BuildingType } from '../../@types/BuildingType'
 import { FetchBuildingsParams } from '../../@types/FetchBuildingsParams'
 
 export const fetchBuildings = createAsyncThunk<BuildingType[], FetchBuildingsParams>(

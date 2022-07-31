@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import styles from './ObjectList.module.scss'
-import { FetchStatusEnum } from '../../../@types/enums/FetchStatusEnum'
 
 import { selectBuildings } from 'redux/building/selectors'
 import { selectSearch } from 'redux/search/selectors'
@@ -12,6 +11,8 @@ import { AppDispatch } from 'redux/store'
 import ObjectBlock from '../ObjectBlock'
 
 import { getFetchParams } from 'utils/GetFetchParams'
+
+import { FetchStatusEnum } from '../../../@types/enums/FetchStatusEnum'
 
 const ObjectList: React.FC = React.memo(() => {
   const { items, status } = useSelector(selectBuildings)

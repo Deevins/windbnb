@@ -1,10 +1,12 @@
 import React from 'react'
 
-import { ReactComponent as Logo } from 'assets/img/logo.svg'
 import styles from './Header.module.scss'
+
+import { ReactComponent as Logo } from 'assets/img/logo.svg'
 import Search from '../Search'
-import { SearchContext } from 'App'
 import Popup from '../Popup'
+
+import { SearchContext } from 'App'
 
 const Header: React.FC = () => {
   const { isOpen } = React.useContext(SearchContext)

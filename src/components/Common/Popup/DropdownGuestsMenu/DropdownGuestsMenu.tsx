@@ -1,13 +1,14 @@
 import React from 'react'
 import clsx from 'clsx'
+import { useDispatch, useSelector } from 'react-redux'
 
 import styles from './DropdownGuestsMenu.module.scss'
 
-import { SearchPropertyEnum } from '../../../../@types/enums/SearchPropertyEnum'
-import { useDispatch, useSelector } from 'react-redux'
 import { selectSearch } from 'redux/search/selectors'
 import { AppDispatch } from 'redux/store'
-import { decrement, increment } from '../../../../redux/search/slice'
+import { decrement, increment } from 'redux/search/slice'
+
+import { SearchPropertyEnum } from '../../../../@types/enums/SearchPropertyEnum'
 
 const DropdownGuestsMenu: React.FC = () => {
   const { adultCount, childrenCount, currentProperty } = useSelector(selectSearch)

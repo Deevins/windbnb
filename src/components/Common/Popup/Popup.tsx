@@ -1,28 +1,29 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import clsx from 'clsx'
 
 import styles from './Popup.module.scss'
 
+import DropdownGuestsMenu from './DropdownGuestsMenu'
+import DropdownLocationMenu from './DropdownLocationMenu'
+
 import { selectSearch } from 'redux/search/selectors'
 import { AppDispatch } from 'redux/store'
 import { setCurrentProperty } from 'redux/search/slice'
-
-import { useOnClickOutside } from 'hooks/useOnClickOutside'
-import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
+import { fetchBuildings } from 'redux/building/asyncActions'
 
 import { SearchContext } from 'App'
-import DropdownGuestsMenu from './DropdownGuestsMenu'
-import DropdownLocationMenu from './DropdownLocationMenu'
-import { getFetchParams } from '../../../utils/GetFetchParams'
-import { fetchBuildings } from '../../../redux/building/asyncActions'
+import { getFetchParams } from 'utils/GetFetchParams'
+import { useOnClickOutside } from 'hooks/useOnClickOutside'
+
+import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
 
 const Popup: React.FC = () => {
   const { adultCount, childrenCount, currentProperty, locationProperty } = useSelector(selectSearch)
   const dispatch = useDispatch<AppDispatch>()
   const popUpRef = React.useRef<HTMLDivElement>(null)
-  const { isOpen, setIsOpen } = useContext(SearchContext)
+  const { isOpen, setIsOpen } = React.useContext(SearchContext)
 
   useOnClickOutside(popUpRef, () => setIsOpen(false))
 

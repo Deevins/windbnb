@@ -6,13 +6,14 @@ import { BiSearchAlt2 } from 'react-icons/bi'
 import styles from './Search.module.scss'
 
 import { selectSearch } from 'redux/search/selectors'
-import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
 import { setCurrentProperty } from 'redux/search/slice'
+import { fetchBuildings } from 'redux/building/asyncActions'
 import { AppDispatch } from 'redux/store'
 
 import { SearchContext } from 'App'
-import { fetchBuildings } from 'redux/building/asyncActions'
 import { getFetchParams } from 'utils/GetFetchParams'
+
+import { SearchPropertyEnum } from '../../../@types/enums/SearchPropertyEnum'
 
 const Search: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()

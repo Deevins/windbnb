@@ -5,12 +5,12 @@ import { MdLocationOn } from 'react-icons/md'
 
 import styles from './DropdownLocationMenu.module.scss'
 
-import { SearchPropertyEnum } from '../../../../@types/enums/SearchPropertyEnum'
-import { placeTitles } from '../../../../@types/constants'
-
 import { selectSearch } from 'redux/search/selectors'
 import { AppDispatch } from 'redux/store'
 import { setLocation } from 'redux/search/slice'
+
+import { SearchPropertyEnum } from '../../../../@types/enums/SearchPropertyEnum'
+import { placeTitles } from '../../../../@types/constants'
 
 const DropdownLocationMenu: React.FC = () => {
   const { currentProperty } = useSelector(selectSearch)

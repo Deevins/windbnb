@@ -1,8 +1,10 @@
 import React from 'react'
-import LocationTitle from '../LocationTitle'
+import { useSelector } from 'react-redux'
 
 import styles from './LocationAndCountBlock.module.scss'
-import { useSelector } from 'react-redux'
+
+import LocationTitle from '../LocationTitle'
+
 import { selectBuildings } from 'redux/building/selectors'
 
 const LocationAndCountBlock: React.FC = () => {
